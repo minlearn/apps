@@ -1,0 +1,368 @@
+#Panel{
+	float:right;
+	width:260px
+}
+body{
+	color:#000;
+	font-family:lucida grande,lucida sans unicode,tahoma,sans-serif;
+	font-size:75%;
+	line-height:1.5em;
+	background-color:#cfc;
+	border-top:3px solid #062;
+	margin:0;
+	padding:0;
+	text-align:left;
+	font-size:small
+}
+#Body{
+	width:1080px;
+	text-align:left;
+	margin:15px auto 0
+}
+#Body .ContentColumn{
+	margin:0 280px 0 0
+}
+#Head{
+	background-color:#60a96d
+}
+a{
+	color:#358244
+}
+.BreadcrumbsWrapper{
+	background:#cfc;
+	border-bottom-color:#aea;
+	color:#3aa53a
+}
+.BreadcrumbsWrapper .Breadcrumbs a{
+	color:#006b00
+}
+.Pager a{
+	color:#0b7a0b
+}
+.Pager .Highlight{
+	background-color:honeyDew
+}
+.Pager span:hover,.Pager a:hover{
+	background-color:honeyDew
+}
+.Signature{
+	border-top:1px solid #e2e2e2
+}
+@fontawesomepath:"./fonts";
+@font-face{
+	font-family:fontawesome;
+	src:url(./fonts/fontawesome-webfont.eot?v=3.2.1);
+	src:url(./fonts/fontawesome-webfont.eot?#iefix&v=3.2.1) format('embedded-opentype'),url(./fonts/fontawesome-webfont.woff?v=3.2.1) format('woff'),url(./fonts/fontawesome-webfont.ttf?v=3.2.1) format('truetype'),url(./fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1) format('svg');
+	font-weight:400;
+	font-style:normal
+}
+#root{
+	background-color:#fff;
+	border-color:#aea;
+	border-radius:0 0 20px 20px;
+	border-style:solid;
+	border-width:0;
+	box-shadow:0 0 8px #aaa;
+	margin:0 auto 30px;
+	width:1080px
+}
+div.Tabs,div.Headings{
+	display:block;
+	border-bottom:1px solid #aea;
+	padding:5px 8px;
+	margin:0;
+	background:#cfc
+}
+div.MessageForm div.Tabs{
+	padding:0;
+	border:0;
+	background:0 0;
+	text-align:left
+}
+div.MessageForm div.Tabs ul{
+	display:inline
+}
+div.Tabs li{
+	display:inline;
+	margin:0
+}
+div.MorePager a,div.MorePager a:link,div.MorePager a:hover,div.MorePager a:active,div.MorePager a:visited,a.TabLink,a.TabLink:link,a.TabLink:hover,a.TabLink:active,a.TabLink:visited,div.Tabs li a,div.Tabs li a:link,div.Tabs li a:hover,div.Tabs li a:active,div.Tabs li a:visited{
+	margin:0;
+	border:1px solid #aea;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	background:#b0f0b0;
+	display:inline;
+	font-weight:700;
+	color:#484;
+	text-decoration:none;
+	padding:3px 10px;
+	line-height:2.6;
+	white-space:nowrap
+}
+div.MorePager li a:hover,a.TabLink:hover,div.Tabs li a:hover{
+	background:#f0fff0
+}
+a.Active,div.Tabs li.Active a{
+	background:#fff;
+	color:#474747
+}
+div.Tabs li a span{
+	line-height:1;
+	font-size:80%;
+	padding:0 3px;
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	font-weight:400;
+	background:#484;
+	color:#eaf4fd;
+	margin:0 0 0 4px
+}
+div.Tabs div.SubTab{
+	margin:10px 0 0;
+	padding:4px 8px;
+	background:#f0fff0;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px
+}
+div.HeadingTabs{
+	padding:8px 8px 8px 12px
+}
+div.HeadingTabs ul{
+	display:inline;
+	float:right
+}
+div.HeadingTabs div.SubTab{
+	font-size:16px;
+	display:inline;
+	font-weight:700;
+	background:0 0;
+	padding:0;
+	line-height:1.9
+}
+div.SearchTabs input.InputBox{
+	width:560px;
+	margin-right:10px
+}
+div.Headings{
+	position:relative;
+	text-align:left
+}
+div.Headings div{
+	display:inline-block;
+	padding-right:10px
+}
+div.Headings div.ItemHeading{
+	font-size:14px;
+	font-weight:700;
+	line-height:2
+}
+div.Headings div.MetaHeading{
+	font-size:11px
+}
+#FDP input[type=checkbox]{
+	width:auto
+}
+.SiteMenu li{
+	position:relative
+}
+.SiteMenu li.dropdown ul{
+	display:none;
+	position:absolute;
+	top:20px;
+	left:0;
+	background:#60a96d;
+	border:1px solid #4a8e56
+}
+.SiteMenu li.dropdown:hover ul{
+	display:block
+}
+.SiteMenu li.dropdown ul li{
+	display:block
+}
+.Pager ul li {
+	display:inline;
+}
+.Pager .selected a {
+	margin: 0 1px;
+	padding: 0 4px;
+	border:1px solid black;
+	border-radius:2px;
+	text-decoration: none
+}
+
+.userContent table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+    border-collapse: unset;
+    margin-bottom: 18px;
+    overflow: hidden;
+    font-size: 13px;
+    color: #606266;
+    background: #f2f6fc;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    border-spacing: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+.userContent table thead th {
+    font-weight: 500;
+    background: #ebeef5;
+}
+
+.userContent table tbody tr {
+    transition: background .35s;
+}
+
+.userContent table td, .userContent table th {
+    padding: 8px;
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.userContent blockquote {
+    margin: 1em
+}
+
+.stat2 {
+  background-color: #cfc;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  color: #333;
+  margin: 1rem 0;
+}
+.stat2 a {
+  color: #333;
+}
+.stat2 a:hover {
+  color: #888;
+}
+.stat2 .line2 {
+  font-size: 14px;
+  flex: 1;
+}
+.stat2 .line2 div:nth-last-child(n+2) {
+  margin-bottom: 6px;
+}
+.stat2 .notify-count {
+  background-color: #f01212;
+  display: inline;
+  border-radius: 6px;
+  padding: 0 6px;
+  font-size: 12.6px;
+  vertical-align: middle;
+  color: white;
+}
+.welcome {
+  margin-top: 5px;
+}
+.welcome ul {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+.welcome li {
+  text-align: center;
+  width: 40px;
+  height: 60px;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+.welcome .name {
+  width: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+};
+.AuthorInfo{
+  font-size:11px;
+}
+.AuthorInfo .RoleTitle {
+  padding:0px 4px 0px 0px;
+  margin-left: 5px;
+  border:1px solid #aea;
+  border-radius:2px;
+  background:#b0f0b0;
+  color:#484
+};
+
+.react-tabs {
+    -webkit-tap-highlight-color:transparent
+}
+
+.react-tabs__tab-list {
+    border-bottom: 1px solid #aaa;
+    margin: 0 0 10px;
+    padding:0
+}
+
+.react-tabs__tab {
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    cursor: pointer;
+    display: inline-block;
+    list-style: none;
+    padding: 4px 8px;
+    position:relative
+}
+
+.react-tabs__tab--selected {
+    background: #fff;
+    border-color: #aaa;
+    border-radius: 3px 3px 0 0;
+    color:#000
+}
+
+.react-tabs__tab--disabled {
+    color: GrayText;
+    cursor:default
+}
+
+.react-tabs__tab:focus {
+    outline:none
+}
+
+.react-tabs__tab:focus:after {
+    background: #fff;
+    bottom: -5px;
+    content: "";
+    height: 5px;
+    left: -4px;
+    position: absolute;
+    right:-4px
+}
+
+.react-tabs__tab-panel {
+    display:none
+}
+
+.react-tabs__tab-panel--selected {
+    display:block
+}
+
+.theme-switcher{
+    float: right;
+    color:var(--link-hover-color);
+    cursor:pointer;
+    padding:0 5px;
+    right:10px
+}
+
+.theme-switcher .botton{
+  width: 16px,
+  height: 16px,
+  display: inline-block,
+  vertical-align: top,
+  background: url(/../images/sprites.png) 0 -196px no-repeat transparent
+}
+
+
