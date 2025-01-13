@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-US">
+
+<body>
+  <input type="text" id="userlocnodecom" value=user@locnode.com> <a href="window.location.host">goto</a> |  <a href="#" onclick="sendshare()">share</a>
+  <table id="myTable"> 
+    <tr> 
+      <th>id</th> 
+      <th>op</th> 
+    </tr> 
+  <!-- Table rows will be added dynamically -->
+  </table> 
+  <div id="pagination"></div> 
+
+
+  <script>
+    //Event on ready DOM
+    document.addEventListener("DOMContentLoaded", function () {
+    //Fetch data
+      fetch('https://hubdiscuzforum.minlearn.workers.dev/api/subscriptions')
+      .then((response) => response.json())
+      .then((data) => {
+        //Then json info is here
+        //console.log(data);
+
+        //You can play here doing a loop and using de iterator "i" for make it at one.
+        //Example: document.querySelector(".faq--0" + i + "h1").innerHTML = json[0].id;
+        //Example: document.querySelector(".faq--0" + i + " p").innerHTML = json[0].id;
+
+
+        const rowsPerPage = 20; 
+        let currentPage = 1; 
+  
+        function updatePagination(currentPage) { 
+          const pageCount = Math.ceil(data.length / rowsPerPage); 
+          const paginationContainer = document.getElementById("pagination"); 
+          paginationContainer.innerHTML = ""; 
+  
+          for (let i = 1; i <= pageCount; i++) { 
+            const pageLink = document.createElement("a"); 
+            pageLink.href = "#"; 
+            pageLink.innerText = i; 
+            pageLink.onclick = function () { 
+              displayTable(i); 
+            }; 
+            if (i === currentPage) { 
+              pageLink.style.fontWeight = "bold"; 
+            } 
+            paginationContainer.appendChild(pageLink); 
+            paginationContainer.appendChild(document.createTextNode(" ")); 
+          } 
+        }
+
+
+        function displayTable(page) { 
+          const table = document.getElementById("myTable"); 
+          const startIndex = (page - 1) * rowsPerPage; 
+          const endIndex = startIndex + rowsPerPage; 
+          const slicedData = data.slice(startIndex, endIndex); 
+  
+          // Clear existing table rows 
+          table.innerHTML = ` 
+            <tr> 
+              <th>id</th> 
+              <th>op</th> 
+            </tr> 
+          `; 
+  
+          // Add new rows to the table 
+          slicedData.forEach(item => { 
+            const row = table.insertRow(); 
+            const nameCell = row.insertCell(0); 
+            const emailCell = row.insertCell(1); 
+            nameCell.innerHTML = `<input type="text" value=${JSON.stringify(item.id)}>`; 
+            emailCell.innerHTML = `<a href=/.well-known/webfinger?resource=acct:user@locnode.com>goto</a> |  <a href="#" onclick="sendfollow(event)">follow</a>`; 
+          }); 
+  
+          // Update pagination 
+          updatePagination(page); 
+        } 
+  
+  
+        // Initial display 
+        displayTable(currentPage);
+      })
+    });
+    // end document.addEventListener
+
+
+    function sendshare() {
+
+      postData('/api2/share', {})
+      .then(data => {
+        console.log(data);
+        if (data.msg && data.msg === 'ok') {
+          let outputElement = document.querySelector('#sendOutput');
+          outputElement.innerHTML = 'Message sent successfully!';
+        }
+      }) // JSON-string from response.json() call
+      .catch(error => console.error(error));
+    }
+
+
+    function sendfollow(e) {
+      let follow = e.target.parentNode.parentNode.firstChild.firstChild.value;
+
+      postData('/api2/follow', {follow})
+      .then(data => {
+        console.log(data);
+        if (data.msg && data.msg === 'ok') {
+          let outputElement = document.querySelector('#sendOutput');
+          outputElement.innerHTML = 'Message sent successfully!';
+        }
+      }) // JSON-string from response.json() call
+      .catch(error => console.error(error));
+    }
+
+
+    function postData(url = ``, data = {}) {
+      // Default options are marked with *
+      return fetch(url, {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        mode: "cors", // no-cors, cors, *same-origin
+        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: "same-origin", // include, same-origin, *omit
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        redirect: "follow", // manual, *follow, error
+        referrer: "no-referrer", // no-referrer, *client
+        body: JSON.stringify(data), // body data type must match "Content-Type" header
+      })
+      .then(response => response.json()); // parses response to JSON
+    }
+
+
+  </script>
+</body>
+
+</html>

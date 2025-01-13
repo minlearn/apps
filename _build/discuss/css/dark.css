@@ -1,0 +1,590 @@
+:root {
+    --neutral-shade-0: black;
+    --neutral-shade-1: #0a0a0e;
+    --neutral-shade-2: #15151b;
+    --neutral-shade-3: #222225;
+    --neutral-shade-6: #373741;
+    --neutral-shade-9: #aaa;
+    --neutral-shade-16: #eee;
+    --highlight-shade-1: rgba(0, 0, 0, 0.9);
+    --highlight-shade-14: rgba(255, 255, 255, 0.2);
+    --highlight-shade-15: rgba(255, 255, 255, 0.1);
+    --highlight-shade-16: rgba(255, 255, 255, 0.06);
+    --primary: #22ad5d;
+    --secondary: orange;
+    --color-info: #1e79a7;
+    --color-warn: #dcb727;
+    --color-alert: #d00;
+    --trans-3: 0.7;
+    --trans-4: 0.6;
+    --icon-brightness: 0.8;
+    --image-opacity: inherit;
+    --image-grayscale: 0
+}
+
+a.PhotoWrap[href="/profile/FAT32"]::before, a[title=FAT32]::before {
+    -webkit-filter: invert(1);
+    filter:invert(1)
+}
+
+a.PhotoWrap::before, a::before, img {
+    opacity: inherit;
+    opacity: var(--image-opacity);
+    -webkit-filter: grayscale(0);
+    -webkit-filter: grayscale(var(--image-grayscale));
+    filter: grayscale(0);
+    filter:grayscale(var(--image-grayscale))
+}
+
+body {
+    background: #222225 !important;
+    border:0
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+#root {
+    background-color: #15151b;
+    background-color: var(--neutral-shade-2);
+    -webkit-box-shadow: none;
+    box-shadow:none
+}
+
+#Head {
+    background: #22ad5d;
+    background:var(--primary)
+}
+
+#Foot {
+    background: #222225;
+    background:var(--neutral-shade-3);
+    border-bottom: 1px solid #22ad5d;
+    border-bottom: 1px solid var(--primary)
+}
+
+.EmotifyDropdown, .OptionsTitle, .ReactSprite, .Sprite, .Sprite16, .TinyProgress, a.Bookmark:hover {
+    -webkit-filter: invert(.8);
+    -webkit-filter: invert(var(--icon-brightness));
+    filter: invert(.8);
+    filter:invert(var(--icon-brightness))
+}
+
+#Foot a, #Panel .PanelInfo a, .FlyoutMenu a, .Pager a, a {
+    color: #22ad5d;
+    color:var(--primary)
+}
+
+#Foot a:hover, #Panel .PanelInfo a:hover, .FlyoutMenu a:hover, a.TextColor:hover, a:hover, a:hover .TextColor {
+    color: orange;
+    color:var(--secondary)
+}
+
+.Button, a.Button, div.MorePager a, div.MorePager a:link, div.MorePager a:visited {
+    background: #000;
+    background: var(--neutral-shade-0);
+    border: 1px solid #373741;
+    border: 1px solid var(--neutral-shade-6);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: #eee;
+    color: var(--neutral-shade-16);
+    text-shadow:none
+}
+
+.Button.Active, .Button:active, .Button:focus, .Button:hover, .ButtonGroup.Open .Button.Handle, a.Button:hover, div.MorePager a:hover {
+    background: orange;
+    background: var(--secondary);
+    color: #000;
+    color: var(--neutral-shade-0);
+    border-color:transparent
+}
+
+div.MorePager a:hover {
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+.MeButton:hover {
+    background-color: rgba(255, 255, 255, .2);
+    background-color:var(--highlight-shade-14)
+}
+
+@-webkit-keyframes highlight {
+    0% {
+        background-color: #000;
+        background-color:var(--neutral-shade-0)
+    }
+
+    10% {
+        background-color: #000;
+        background-color:var(--neutral-shade-0)
+    }
+}
+
+@keyframes highlight {
+    0% {
+        background-color: #000;
+        background-color:var(--neutral-shade-0)
+    }
+
+    10% {
+        background-color: #000;
+        background-color:var(--neutral-shade-0)
+    }
+}
+
+.highlight-effect {
+    -webkit-animation: highlight .8s;
+    animation:highlight .8s
+}
+
+.Count, span.Count {
+    background: rgba(255, 255, 255, .1);
+    background:var(--highlight-shade-15)
+}
+
+#Foot, .Count, span.Count {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.Pager .Highlight.Highlight {
+    background: #22ad5d;
+    background: var(--primary);
+    color: #000;
+    color: var(--neutral-shade-0);
+    padding:0 2px
+}
+
+.Pager a:hover, .Pager span:hover {
+    background: 0 0;
+    text-decoration:underline
+}
+
+div.Headings, div.Tabs {
+    border-bottom: 1px solid #22ad5d;
+    border-bottom: 1px solid var(--primary);
+    background: 0 0;
+    background: #222225;
+    background: var(--neutral-shade-3)
+}
+
+.SiteMenu li.dropdown ul {
+    background: #22ad5d;
+    background: var(--primary);
+    border:0
+}
+
+.SiteSearch .Button {
+    -webkit-filter: invert(.8);
+    -webkit-filter: invert(var(--icon-brightness));
+    filter: invert(.8);
+    filter: invert(var(--icon-brightness));
+    border:0
+}
+
+.SiteSearch .Button:hover {
+    background:0 0
+}
+
+.Discussions .DataList .Item, .Item {
+    background: #15151b;
+    background: var(--neutral-shade-2);
+    opacity:1
+}
+
+.Discussions .DataList .Item.Read, .Item.Read {
+    background: 0 0;
+    opacity:1
+}
+
+.Discussions .DataList .Item.Read .ItemContent.Discussion {
+    opacity: .7;
+    opacity:var(--trans-3)
+}
+
+.Tag {
+    background: #aaa;
+    background: var(--neutral-shade-9);
+    color: #000;
+    color: var(--neutral-shade-0);
+    font-weight:700
+}
+
+#ConversationForm label, .DataList .Meta, .DiscussionForm label, .Gloss, .ItemDiscussion .Meta, .PopList .Meta {
+    color: #aaa;
+    color:var(--neutral-shade-9)
+}
+
+.HasNew, .PanelInfo .Meta strong {
+    background: #dcb727;
+    background:var(--color-warn)
+}
+
+ul.DataList div.Meta span.Category, ul.DataList div.Meta span.Category:hover {
+    background: 0 0;
+    border: 1px solid #22ad5d;
+    border:1px solid var(--primary)
+}
+
+.Options {
+    position: relative;
+    z-index:1
+}
+
+.DataList .Item, .NarrowList .Item, .PopList .Item {
+    background: 0 0;
+    border:0
+}
+
+.DataList .Item, .NarrowList .Item {
+    border-bottom: 1px solid #373741;
+    border-bottom:1px solid var(--neutral-shade-6)
+}
+
+.DataList .Item:last-child, .NarrowList .Item:last-child {
+    border:0
+}
+
+.Signature {
+    border-top: 1px solid #aaa;
+    border-top: 1px solid var(--neutral-shade-9);
+    line-height: 1.3;
+    opacity: .6;
+    opacity:var(--trans-4)
+}
+
+#Panel .BoxFilter, .Box {
+    background: #222225;
+    background: var(--neutral-shade-3);
+    color: #aaa;
+    color: var(--neutral-shade-9);
+    -webkit-box-shadow: none;
+    box-shadow:none
+}
+
+#Panel .FilterMenu li, #Panel .PanelInfo li {
+    background: 0 0;
+    border-bottom: 1px solid #373741;
+    border-bottom:1px solid var(--neutral-shade-6)
+}
+
+#Panel .FilterMenu li:first-child, .PanelInfo li:first-child {
+    border-top:0
+}
+
+#Panel .FilterMenu li:last-child, #Panel .PanelInfo li:last-child {
+    border:0
+}
+
+#Panel .FilterMenu .Active, #Panel .PanelInfo .Active {
+    background: #373741;
+    background: var(--neutral-shade-6);
+    border-bottom: 1px solid #373741;
+    border-bottom: 1px solid var(--neutral-shade-6);
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+div.bsap_1278603 img {
+    background: #eee;
+    background:var(--neutral-shade-16)
+}
+
+div.bsap_1278603 a, div.bsap_1278603 iframe {
+    color: #eee !important;
+    color:var(--neutral-shade-16) !important
+}
+
+.MenuItems {
+    background: #222225;
+    background: var(--neutral-shade-3);
+    border:0
+}
+
+.MenuItems a, .MenuItems a:active, .MenuItems a:link, .MenuItems a:visited {
+    color: #eee !important;
+    color:var(--neutral-shade-16) !important
+}
+
+.MenuItems a:hover {
+    background-color: orange !important;
+    background-color: var(--secondary) !important;
+    color: #000 !important;
+    color:var(--neutral-shade-0) !important
+}
+
+.Flyout:after, .Flyout:before {
+    border-bottom: 7px solid #222225;
+    border-bottom:7px solid var(--neutral-shade-3)
+}
+
+.FlyoutMenu {
+    background: #222225;
+    background: var(--neutral-shade-3);
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding:4px
+}
+
+#quoteButton, .FlyoutMenu {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+#quoteButton {
+    background: #000;
+    background: var(--neutral-shade-0);
+    border: 1px solid #eee;
+    border:1px solid var(--neutral-shade-16)
+}
+
+#quoteButton:focus, #quoteButton:hover {
+    background: orange;
+    background: var(--secondary);
+    border-color: transparent;
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+div.token-input-dropdown, div.token-input-dropdown ul li, div.token-input-dropdown ul li.token-input-dropdown-item, div.token-input-dropdown ul li.token-input-dropdown-item2 {
+    background: #0a0a0e;
+    background:var(--neutral-shade-1)
+}
+
+.atwho-view .cur, div.token-input-dropdown ul li.token-input-selected-dropdown-item, li.token-input-selected-token {
+    background: orange;
+    background: var(--secondary);
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+.atwho-view {
+    background: #0a0a0e;
+    background:var(--neutral-shade-1)
+}
+
+.atwho-view strong {
+    color: orange;
+    color:var(--secondary)
+}
+
+.atwho-view .cur strong {
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+.Activities a.CommentLink, .Activities a.CommentLink:hover, input.DateBox, input.InputBox, input.SmallInput, select, textarea, textarea.InputBox, ul.token-input-list, ul.token-input-list li input {
+    background: #0a0a0e;
+    background: var(--neutral-shade-1);
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.Activities a.CommentLink, .Activities a.CommentLink:hover {
+    border:0
+}
+
+input.InputBox:focus, input.SmallInput:focus, textarea:focus {
+    background: #000;
+    background:var(--neutral-shade-0)
+}
+
+.Preview {
+    background: 0 0;
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.editor .editor-sep {
+    border-left-color: rgba(255, 255, 255, .2);
+    border-left-color:var(--highlight-shade-14)
+}
+
+.editor .icon.editor-toggle-fullpage-button {
+    display:none
+}
+
+.editor .icon:hover, .editor-dd-emoji + .editor-insert-dialog .emoji-wrap:hover, .editor-dropdown-open > .editor-action, .wysihtml5-action-active, .wysihtml5-command-active, .wysihtml5-command-dialog-opened {
+    background-color: rgba(255, 255, 255, .2);
+    background-color:var(--highlight-shade-14)
+}
+
+.EmoticonBox, .EmoticonContainer {
+    background-color: #0a0a0e;
+    background-color:var(--neutral-shade-1)
+}
+
+.EmoticonBox:hover {
+    border-color:transparent
+}
+
+.userContent h1, .userContent h2, .userContent h3, .userContent h4, .userContent h5, .userContent h6 {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+code, pre {
+    background: #2e2e04;
+    border:1px solid #56560b
+}
+
+div.Spoiler, div.Spoiler.SpoilerConfigured {
+    background: rgba(255, 255, 255, .1);
+    background:var(--highlight-shade-15)
+}
+
+blockquote.Quote, blockquote.UserQuote {
+    background: rgba(255, 255, 255, .06);
+    background: var(--highlight-shade-16);
+    border-left: 4px solid rgba(255, 255, 255, .1);
+    border-left:4px solid var(--highlight-shade-15)
+}
+
+dl.About dt {
+    color: #333;
+    -webkit-filter: invert(.8);
+    -webkit-filter: invert(var(--icon-brightness));
+    filter: invert(.8);
+    filter:invert(var(--icon-brightness))
+}
+
+mark {
+    background: orange;
+    background: var(--secondary);
+    color: #000;
+    color:var(--neutral-shade-0)
+}
+
+.ButtonGroup.Open .NavButton.Handle, .NavButton {
+    background: #000;
+    background: var(--neutral-shade-0);
+    border-color: transparent;
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+a.ChangePicture {
+    z-index:10
+}
+
+.Border {
+    background: rgba(255, 255, 255, .2);
+    background:var(--highlight-shade-14)
+}
+
+div.Popup .Body {
+    background: #15151b;
+    background:var(--neutral-shade-2)
+}
+
+a.Close {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+a.Close:hover {
+    color: orange;
+    color:var(--secondary)
+}
+
+.Info, .InfoMessage {
+    background: #aaa;
+    background:var(--neutral-shade-9)
+}
+
+.CasualMessage, .Info, .InfoMessage {
+    border-color: transparent;
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.CasualMessage {
+    background: #521414
+}
+
+.WarningMessage {
+    background: #d00;
+    background: var(--color-alert);
+    border-color:transparent
+}
+
+.DismissMessage a.Dismiss, .WarningMessage {
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.DismissMessage a.Dismiss:hover {
+    background: 0 0;
+    color: orange;
+    color:var(--secondary)
+}
+
+div.Warning, span.Warning {
+    background: #d00;
+    background: var(--color-alert);
+    border-color: transparent;
+    color: #eee;
+    color:var(--neutral-shade-16)
+}
+
+.InformMessages .InformMessage {
+    background: rgba(0, 0, 0, .9) !important;
+    background:var(--highlight-shade-1) !important
+}
+
+.FormWrapper {
+    background:0 0
+}
+
+.PasswordStrength .Background {
+    background: #000;
+    background:var(--neutral-shade-0)
+}
+
+.PasswordStrength .Separator {
+    background: #15151b;
+    background: var(--neutral-shade-2)
+}
+
+.stat2 {
+  background: #222225;
+  background: var(--neutral-shade-3)
+}
+
+.stat2 a{
+  color: #22ad5d;
+  color:var(--primary)
+}
+
+.react-tabs__tab--selected {
+  background: #222225;
+  background: var(--neutral-shade-3);
+  color: #22ad5d;
+  color:var(--primary)
+}
+
+.userContent table {
+    color: #eee;
+    color:var(--neutral-shade-16);
+    background: #2e2e04;
+    border: 1px solid #56560b;
+}
+
+.userContent table thead th {
+    background: #2e2e04;
+}
+
+.userContent table tbody tr {
+    background: #2e2e04;
+}
+
+.userContent table td, .userContent table th {
+    border-right: 1px solid #56560b;
+    border-bottom: 1px solid #56560b;
+}
+
