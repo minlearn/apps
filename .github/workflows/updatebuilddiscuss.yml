@@ -1,0 +1,39 @@
+name: updatebuilddiscuss
+
+on:
+  #push:
+  workflow_dispatch:
+
+env:
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+  CLOUDFLARE_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+  DEPLOYMENT_ENVIRONMENT: production
+  PRODUCTION_BRANCH: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    environment:
+      name: ${{ github.event.inputs.DEPLOYMENT_ENVIRONMENT }}
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: 17.x
+          #tmpcomment      cache: 'yarn'
+
+
+      - name: deploy to cfpagesaio
+        run: |
+          sudo npm install toml aws-sdk
+          sudo npm install -g wrangler
+          sh .github/serverless/generate_vars_toml.sh && sudo node .github/serverless/init_app_db.js && sudo node .github/serverless/init_project.js
+          sudo node .github/serverless/sync_project_config.js && NODE_ENV=production sudo node .github/serverless/direct_upload.js
+
+
+
